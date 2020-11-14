@@ -1,5 +1,9 @@
-cmake_minimum_required(VERSION 3.5.1)
+cmake_minimum_required(VERSION 3.18.1)
 project(hyperpixel)
+
+message(STATUS ${CMAKE_SYSTEM_NAME})
+
+find_package(Threads)
 
 include_directories(libhyperpixel, cpp-httplib-0.7.14)
 
