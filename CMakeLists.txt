@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.18.1)
+cmake_minimum_required(VERSION 3.5.1)
 project(hyperpixel)
 
 include_directories(libhyperpixel, cpp-httplib-0.7.14)
