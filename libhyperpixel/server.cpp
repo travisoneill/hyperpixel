@@ -7,8 +7,8 @@ namespace server {
   void runserver(const char* host, int port) {
     httplib::Server server;
 
-    auto ret = server.set_mount_point("/", "../frontend/static");
-    ret = server.set_mount_point("/data", "../project_data");
+    server.set_mount_point("/", "../frontend/static");
+    server.set_mount_point("/data", "../project_data");
 
     server.Get("/hi", [](const httplib::Request&, httplib::Response& res) {
       res.set_content("Hello World!", "text/plain");
@@ -19,9 +19,9 @@ namespace server {
     });
 
     server.Post("/upload", [](const httplib::Request& req, httplib::Response& res) {
-      int size = req.files.size();
+      // int size = req.files.size();
       // std::cout << size << std::endl;
-      auto ret = req.has_file("file");
+      // auto ret = req.has_file("file");
       // std::cout << ret << std::endl;
       const std::string project = req.get_file_value("project").content;
       const auto& file = req.get_file_value("file");

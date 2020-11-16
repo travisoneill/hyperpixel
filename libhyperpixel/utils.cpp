@@ -29,7 +29,7 @@ namespace utils {
   // returns padded label of correct length for number based on count
   // e.g. frame idx = 25 frame count = 1500 => "0025"
   std::string get_frame_index_label(int frame_idx, int frame_count) {
-    int num_digits = int(log10(frame_count)) + 1;
+    size_t num_digits = int(log10(frame_count)) + 1;
     std::string out = std::to_string(frame_idx);
 
     while (out.length() < num_digits) {
